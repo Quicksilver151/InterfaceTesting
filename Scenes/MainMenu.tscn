@@ -81,18 +81,24 @@ margin_right = 384.0
 margin_bottom = 287.0
 custom_constants/separation = 16
 
-[node name="Play" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
+[node name="Play" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
+"MainMenuButtons",
+]]
 margin_right = 256.0
 margin_bottom = 85.0
 text = "Play"
 
-[node name="Settings" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
+[node name="Settings" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
+"MainMenuButtons",
+]]
 margin_top = 101.0
 margin_right = 256.0
 margin_bottom = 186.0
 text = "Settings"
 
-[node name="Exit" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
+[node name="Exit" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
+"MainMenuButtons",
+]]
 margin_top = 202.0
 margin_right = 256.0
 margin_bottom = 287.0
