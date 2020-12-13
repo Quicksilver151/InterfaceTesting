@@ -1,17 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Code/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/ka1.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Themes/ButtonTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Fonts/ka1.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Themes/ButtonTheme.tres" type="Theme" id=3]
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.0078125, 0, 1, 1, 1, 0.00390625, 0.517517, 1 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 2
 font_data = ExtResource( 2 )
 
 [node name="MainMenu" type="MarginContainer"]
@@ -28,7 +31,7 @@ __meta__ = {
 [node name="ColorRect" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
-texture = SubResource( 5 )
+texture = SubResource( 2 )
 expand = true
 stretch_mode = 1
 
@@ -54,11 +57,11 @@ custom_constants/separation = 128
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Layout/MidLayout"]
-margin_top = 3.0
 margin_right = 512.0
-margin_bottom = 149.0
+margin_bottom = 153.0
 rect_clip_content = false
 size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[wave freq=3, amp=100][center] Epic game [/center][/wave]"
@@ -66,9 +69,9 @@ text = " Epic game "
 fit_content_height = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Layout/MidLayout"]
-margin_top = 277.0
+margin_top = 281.0
 margin_right = 512.0
-margin_bottom = 564.0
+margin_bottom = 568.0
 custom_constants/margin_right = 128
 custom_constants/margin_left = 128
 __meta__ = {
@@ -81,25 +84,22 @@ margin_right = 384.0
 margin_bottom = 287.0
 custom_constants/separation = 16
 
-[node name="Play" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
-"MainMenuButtons",
-]]
+[node name="Play" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
 margin_right = 256.0
 margin_bottom = 85.0
 text = "Play"
 
-[node name="Settings" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
-"MainMenuButtons",
-]]
+[node name="Settings" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
 margin_top = 101.0
 margin_right = 256.0
 margin_bottom = 186.0
 text = "Settings"
 
-[node name="Exit" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
-"MainMenuButtons",
-]]
+[node name="Exit" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
 margin_top = 202.0
 margin_right = 256.0
 margin_bottom = 287.0
 text = "Exit"
+[connection signal="pressed" from="Layout/MidLayout/MarginContainer/Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Layout/MidLayout/MarginContainer/Buttons/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Layout/MidLayout/MarginContainer/Buttons/Exit" to="." method="_on_Exit_pressed"]

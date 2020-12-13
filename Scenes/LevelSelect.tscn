@@ -1,0 +1,281 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Themes/LevelButtonTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Sprites/UI/right.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/UI/left_d.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/UI/left.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/UI/right_d.png" type="Texture" id=5]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.0078125, 0, 1, 1, 1, 0.00390625, 0.517517, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="LevelSelect" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxTop" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxTop"]
+margin_right = 254.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxTop"]
+margin_left = 258.0
+margin_right = 766.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.258824 )
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxTop"]
+margin_left = 770.0
+margin_right = 1024.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 152.0
+margin_right = 1024.0
+margin_bottom = 448.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer"]
+margin_left = 37.0
+margin_top = 10.0
+margin_right = 987.0
+margin_bottom = 285.0
+custom_constants/separation = 128
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 275.0
+
+[node name="Previous" type="TextureButton" parent="VBoxContainer/CenterContainer/HBoxContainer/CenterContainer"]
+margin_top = 87.0
+margin_right = 100.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 228.0
+margin_right = 722.0
+margin_bottom = 275.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
+columns = 5
+
+[node name="Level1" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_right = 86.0
+margin_bottom = 81.0
+text = "   1   "
+
+[node name="Level2" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 102.0
+margin_right = 188.0
+margin_bottom = 81.0
+text = "   1   "
+
+[node name="Level3" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 204.0
+margin_right = 290.0
+margin_bottom = 81.0
+text = "   1   "
+
+[node name="Level4" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 306.0
+margin_right = 392.0
+margin_bottom = 81.0
+text = "   1   "
+
+[node name="Level5" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 408.0
+margin_right = 494.0
+margin_bottom = 81.0
+text = "   1   "
+
+[node name="Level6" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_top = 97.0
+margin_right = 86.0
+margin_bottom = 178.0
+text = "   1   "
+
+[node name="Level7" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 97.0
+margin_right = 188.0
+margin_bottom = 178.0
+text = "   1   "
+
+[node name="Level8" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 204.0
+margin_top = 97.0
+margin_right = 290.0
+margin_bottom = 178.0
+text = "   1   "
+
+[node name="Level9" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 306.0
+margin_top = 97.0
+margin_right = 392.0
+margin_bottom = 178.0
+text = "   1   "
+
+[node name="Level10" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 408.0
+margin_top = 97.0
+margin_right = 494.0
+margin_bottom = 178.0
+text = "   1   "
+
+[node name="Level11" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_top = 194.0
+margin_right = 86.0
+margin_bottom = 275.0
+text = "   1   "
+
+[node name="Level12" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 102.0
+margin_top = 194.0
+margin_right = 188.0
+margin_bottom = 275.0
+text = "   1   "
+
+[node name="Level13" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 204.0
+margin_top = 194.0
+margin_right = 290.0
+margin_bottom = 275.0
+text = "   1   "
+
+[node name="Level14" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 306.0
+margin_top = 194.0
+margin_right = 392.0
+margin_bottom = 275.0
+text = "   1   "
+
+[node name="Level15" type="Button" parent="VBoxContainer/CenterContainer/HBoxContainer/GridContainer"]
+margin_left = 408.0
+margin_top = 194.0
+margin_right = 494.0
+margin_bottom = 275.0
+text = "   1   "
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 850.0
+margin_right = 950.0
+margin_bottom = 275.0
+
+[node name="Next" type="TextureButton" parent="VBoxContainer/CenterContainer/HBoxContainer/CenterContainer2"]
+margin_top = 87.0
+margin_right = 100.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxBottom" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 452.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxBottom"]
+margin_right = 126.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxBottom"]
+margin_left = 130.0
+margin_right = 382.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.258824 )
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxBottom"]
+margin_left = 386.0
+margin_right = 638.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxBottom"]
+margin_left = 642.0
+margin_right = 894.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0.258824 )
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxBottom"]
+margin_left = 898.0
+margin_right = 1024.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
