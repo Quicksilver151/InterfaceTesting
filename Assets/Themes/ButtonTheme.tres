@@ -21,11 +21,10 @@ corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id=4]
-draw_center = false
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 1, 1, 0.25098 )
+bg_color = Color( 1, 1, 1, 0.0705882 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024

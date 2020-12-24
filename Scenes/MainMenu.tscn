@@ -1,16 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/ka1.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Themes/ButtonTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Themes/StyleBoxes/DefaultPannel.tres" type="StyleBox" id=4]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 0.0078125, 0, 1, 1, 1, 0.00390625, 0.517517, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 use_mipmaps = true
 use_filter = true
@@ -18,8 +13,9 @@ extra_spacing_char = 2
 font_data = ExtResource( 2 )
 
 [node name="MainMenu" type="MarginContainer"]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -28,16 +24,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
-texture = SubResource( 2 )
-expand = true
-stretch_mode = 1
-
 [node name="Layout" type="MarginContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 602.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 256
@@ -47,31 +36,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MarginContainer" type="MarginContainer" parent="Layout"]
+margin_left = 256.0
+margin_right = 768.0
+margin_bottom = 570.0
+custom_constants/margin_right = 80
+custom_constants/margin_top = 272
+custom_constants/margin_left = 80
+
+[node name="PanelContainer" type="PanelContainer" parent="Layout/MarginContainer"]
+margin_left = 80.0
+margin_top = 272.0
+margin_right = 432.0
+margin_bottom = 570.0
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MidLayout" type="VBoxContainer" parent="Layout"]
 margin_left = 256.0
 margin_right = 768.0
-margin_bottom = 568.0
+margin_bottom = 570.0
 size_flags_horizontal = 11
 size_flags_vertical = 3
-custom_constants/separation = 128
+custom_constants/separation = 64
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Layout/MidLayout"]
 margin_right = 512.0
-margin_bottom = 153.0
+margin_bottom = 219.0
 rect_clip_content = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[wave freq=3, amp=100][center] Epic game [/center][/wave]"
-text = " Epic game "
+bbcode_text = "[wave freq=3, amp=100][center]Interface testing [/center][/wave]"
+text = "Interface testing "
 fit_content_height = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Layout/MidLayout"]
-margin_top = 281.0
+margin_top = 283.0
 margin_right = 512.0
-margin_bottom = 568.0
+margin_bottom = 570.0
 custom_constants/margin_right = 128
 custom_constants/margin_left = 128
 __meta__ = {
@@ -84,18 +91,24 @@ margin_right = 384.0
 margin_bottom = 287.0
 custom_constants/separation = 16
 
-[node name="Play" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
+[node name="Play" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
+"menu_buttons",
+]]
 margin_right = 256.0
 margin_bottom = 85.0
 text = "Play"
 
-[node name="Settings" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
+[node name="Settings" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
+"menu_buttons",
+]]
 margin_top = 101.0
 margin_right = 256.0
 margin_bottom = 186.0
 text = "Settings"
 
-[node name="Exit" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons"]
+[node name="Exit" type="Button" parent="Layout/MidLayout/MarginContainer/Buttons" groups=[
+"menu_buttons",
+]]
 margin_top = 202.0
 margin_right = 256.0
 margin_bottom = 287.0

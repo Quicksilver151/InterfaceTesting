@@ -7,9 +7,10 @@ func _ready():
 	
 
 func _process(delta):
-	rect_size = get_viewport_rect().end
 	if Input.is_action_just_pressed("ui_accept") and get_focus_owner() == null:
 		$Layout/MidLayout/MarginContainer/Buttons/Play.grab_focus()
+	
+	$Layout.visible = !Overlay.ConfirmExit.visible
 	
 
 func de_focus():
@@ -25,7 +26,6 @@ func _on_Settings_pressed():
 	pass
 
 func _on_Exit_pressed():
-	get_tree().quit()
-
+	Overlay.ConfirmExit.popup()
 
 

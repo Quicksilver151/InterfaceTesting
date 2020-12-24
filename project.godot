@@ -22,12 +22,13 @@ _global_script_class_icons={
 
 config/name="InterfaceTesting"
 run/main_scene="res://Scenes/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://icon192.png"
 
 [autoload]
 
 Global="*res://Code/Globals.gd"
 Overlay="*res://Objects/ObjectAssets/Overlay.tscn"
+BackgroundLayer="*res://Objects/ObjectAssets/BackgroundLayer.tscn"
 
 [display]
 
